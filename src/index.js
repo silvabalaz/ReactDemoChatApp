@@ -1,10 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import * as ReactDOM from "react-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: http://bit.ly/CRA-PWA
+serviceWorker.unregister();
+
+
 const DUMMY_DATA = [
     {
         senderId: "silva",
@@ -31,19 +35,24 @@ class App extends React.Component{
         this.state = { messages : DUMMY_DATA }
 
     }
+
     render() {
         return (
-            <div className="app">
-                <MessageList messages = {this.state.messages} />
-                <SendMessageForm />
-            </div>
+                <div className="app">
+                    <Title />
+                    <MessageList messages={this.state.messages}/>
+                </div>
+
         )
     }
-}
 
+}
+function Title() {
+    return <p className="title">Silvin demo chat</p>
+}
 class MessageList extends React.Component {
     render() {
-     return{
+        return (
         <ul className="message-list">
             {this.props.messages.map(message => {
                 return (
@@ -58,8 +67,8 @@ class MessageList extends React.Component {
                 )
             })}
         </ul>
+        )
 
+    } }
 
-     }
-    }
-}
+ReactDOM.render(<App />, document.getElementById('root'));
