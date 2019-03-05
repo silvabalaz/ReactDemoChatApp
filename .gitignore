@@ -1,23 +1,35 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+typings
+**/app/**/*.js
+**/app/**/*.map
+node_modules
+jspm_packages
+bower_components
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+.vs
+**/*.sou
+**/*.user
+bin
+obj
+packages
 
-# testing
-/coverage
 
-# production
-/build
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Generated files
+bin/
+gen/
+out/
+logs/
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log Files
+*.log
+
+# Intellij
+*.iml
+.idea/workspace.xml
+.idea/libraries
+
+# Keystore files
+*.jks
